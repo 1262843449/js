@@ -85,6 +85,7 @@ Options 请求，询问服务器是否支持修改的请求头，如果服务器
 
 •
 说一下 web worker
+
 参考回答：
 在 HTML 页面中，如果在执行脚本时，页面的状态是不可相应的，直到脚本执行完成
 后，页面才变成可相应。web worker 是运行在后台的 js，独立于其他脚本，不会影响
@@ -123,3 +124,105 @@ XSS（跨站脚本攻击）是指攻击者在返回的 HTML 中嵌入 javascript
 httponly-这个属性可以防止 XSS,它会禁止 javascript 脚本来访问 cookie。
 secure - 这个属性告诉浏览器仅在请求为 https 的时候发送 cookie。
 结果应该是这样的：Set-Cookie=<cookie-value>.....
+
+# 11
+•
+cookie session 区别
+参考回答：
+1.
+cookie 数据存放在客户的浏览器上，session 数据放在服务器上。
+2.
+cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺
+骗
+考虑到安全应当使用 session。
+3.
+session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务
+器的性能
+考虑到减轻服务器性能方面，应当使用 COOKIE。
+4.
+单个 cookie 保存的数据不能超过 4K，很多浏览器都限制一个站点最多保存
+20 个 cookie。
+
+# 12
+•
+讲讲 304
+参考回答：
+304：如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自
+上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个 304 状态
+码。
+
+# 13
+•
+GET 和 POST 的区别
+参考回答：
+get 参数通过 url 传递，post 放在 request body 中。
+get 请求在 url 中传递的参数是有长度限制的，而 post 没有。
+get 比 post 更不安全，因为参数直接暴露在 url 中，所以不能用来传递敏感信息。
+get 请求只能进行 url 编码，而 post 支持多种编码方式
+get 请求会浏览器主动 cache，而 post 支持多种编码方式。
+get 请求参数会被完整保留在浏览历史记录里，而 post 中的参数不会被保留。
+GET 和 POST 本质上就是 TCP 链接，并无差别。但是由于 HTTP 的规定和浏览器/服务器
+的限制，导致他们在应用过程中体现出一些不同。
+GET 产生一个 TCP 数据包；POST 产生两个 TCP 数据包。
+
+# 14
+•
+HTTP 支持的方法
+参考回答：
+GET, POST, HEAD, OPTIONS, PUT, DELETE, TRACE, CONNECT
+
+# 15
+•
+说一下浏览器缓存
+参考回答：
+缓存分为两种：强缓存和协商缓存，根据响应的 header 内容来决定。
+强缓存相关字段有 expires，cache-control。如果 cache-control 与 expires 同时存
+在的话，cache-control 的优先级高于 expires。
+协商缓存相关字段有 Last-Modified/If-Modified-Since，Etag/If-None-Match
+
+# 16
+•
+HTML5 新增的元素
+参考回答：
+首先 html5 为了更好的实践 web 语义化，增加了 header，footer，nav,aside,section
+等语义化标签，在表单方面，为了增强表单，为 input 增加了 color，
+emial,data ,range 等类型，在存储方面，提供了 sessionStorage，localStorage,和
+离线存储，通过这些存储方式方便数据在客户端的存储和获取，在多媒体方面规定了
+音频和视频元素 audio 和 vedio，另外还有地理定位，canvas 画布，拖放，多线程编
+程的 web worker 和 websocket 协议。
+
+# 17
+•
+常见的 HTTP 的头部
+参考回答：
+可以将 http 首部分为通用首部，请求首部，响应首部，实体首部
+通用首部表示一些通用信息，比如 date 表示报文创建时间，
+请求首部就是请求报文中独有的，如 cookie，和缓存相关的如 if-Modified-Since
+响应首部就是响应报文中独有的，如 set-cookie，和重定向相关的 location，
+实体首部用来描述实体部分，如 allow 用来描述可执行的请求方法，content-type 描
+述主题类型，content-Encoding 描述主体的编码方式。
+
+# 18
+cache-control 的值有哪些
+参考回答：
+cache-control 是一个通用消息头字段被用于 HTTP 请求和响应中，通过指定指令来实
+现缓存机制，这个缓存指令是单向的，常见的取值有 private、no-cache、max-age、
+must-revalidate 等，默认为 private。
+
+# 19
+浏览器在生成页面的时候，会生成那两颗树？
+参考回答：
+构造两棵树，DOM 树和 CSSOM 规则树，
+当浏览器接收到服务器相应来的 HTML 文档后，会遍历文档节点，生成 DOM 树，
+CSSOM 规则树由浏览器解析 CSS 文件生成。
+
+# 20
+•
+输入 URL 到页面加载显示完成发生了什么?
+参考回答：
+DNS 解析
+TCP 连接
+发送 HTTP 请求
+服务器处理请求并返回 HTTP 报文
+浏览器解析渲染页面
+连接结束
