@@ -226,3 +226,95 @@ TCP 连接
 服务器处理请求并返回 HTTP 报文
 浏览器解析渲染页面
 连接结束
+
+# 21
+•
+说一下对 Cookie 和 Session 的认知，Cookie 有哪些限制？
+参考回答：
+1.
+cookie 数据存放在客户的浏览器上，session 数据放在服务器上。
+2.
+cookie 不是很安全，别人可以分析存放在本地的 COOKIE 并进行 COOKIE 欺
+骗
+考虑到安全应当使用 session。
+3.
+session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务
+器的性能
+考虑到减轻服务器性能方面，应当使用 COOKIE。
+4.
+单个 cookie 保存的数据不能超过 4K，很多浏览器都限制一个站点最多保存
+20 个 cookie。
+
+# 22具体有哪些请求头是跟缓存相关的
+参考回答：
+缓存分为两种：强缓存和协商缓存，根据响应的 header 内容来决定。
+强缓存相关字段有 expires，cache-control。如果 cache-control 与 expires 同时存
+在的话，cache-control 的优先级高于 expires。
+协商缓存相关字段有 Last-Modified/If-Modified-Since，Etag/If-None-Match
+
+# 23
+•
+cookie 有哪些编码方式？
+参考回答：
+encodeURI（）
+
+# 24
+•
+浏览器输入网址到页面渲染全过程
+参考回答：
+DNS 解析
+TCP 连接
+发送 HTTP 请求
+服务器处理请求并返回 HTTP 报文
+浏览器解析渲染页面
+连接结束
+
+# 25
+•
+http 常见的请求方法
+参考回答：
+get、post，这两个用的是最多的，还有很多比如 patch、delete、put、options 等等
+
+# 26
+•
+web 性能优化
+参考回答：
+降低请求量：合并资源，减少 HTTP 请求数，minify / gzip 压缩，webP，lazyLoad。
+加快请求速度：预解析 DNS，减少域名数，并行加载，CDN 分发。
+缓存：HTTP 协议缓存请求，离线缓存 manifest，离线数据缓存 localStorage。
+渲染：JS/CSS 优化，加载顺序，服务端渲染，pipeline。
+
+# 27
+•
+transition 和 animation 的区别
+参考回答：
+Animation 和 transition 大部分属性是相同的，他们都是随时间改变元素的属性值，
+他们的主要区别是 transition 需要触发一个事件才能改变属性，而 animation 不需要
+触发任何事件的情况下才会随时间改变属性值，并且 transition 为 2 帧，从
+from .... to，而 animation 可以一帧一帧的。
+
+# 28
+•
+说一下块元素和行元素
+参考回答：
+块元素：独占一行，并且有自动填满父元素，可以设置 margin 和 pading 以及高度和
+宽度
+行元素：不会独占一行，width 和 height 会失效，并且在垂直方向的 padding 和
+margin 会失
+效。
+
+# 29
+•
+css3 新特性
+参考回答：
+开放题。CSS3 边框如 border-radius，box-shadow 等；CSS3 背景如 background-
+size，background-origin 等；CSS3 2D，3D 转换如 transform 等；CSS3 动画如
+animation 等。
+参考 https://www.cnblogs.com/xkweb/p/5862612.html
+
+# 30
+•
+怎么样让一个元素消失，讲讲
+参考回答：
+display:none; visibility:hidden; opacity: 0; 等等
+
