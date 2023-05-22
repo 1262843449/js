@@ -318,3 +318,76 @@ animation 等。
 参考回答：
 display:none; visibility:hidden; opacity: 0; 等等
 
+# 31
+•
+CSS3 中对溢出的处理
+参考回答：
+cnkOhu
+text-overflow 属性，值为 clip 是修剪文本；ellipsis 为显示省略符号来表被修剪的
+文本；string 为使用给定的字符串来代表被修剪的文本。
+
+# 32
+•
+float 的元素，display 是什么
+参考回答：
+display 为 block
+
+# 33
+•
+隐藏页面中某个元素的方法
+参考回答：
+display:none; visibility:hidden; opacity: 0; position 移到外部，z-index 涂层
+遮盖等等
+
+# 34
+•
+calc 属性
+参考回答：
+Calc 用户动态计算长度值，任何长度值都可以使用 calc()函数计算，需要注意的是，
+运算符前后都需要保留一个空格，例如：width: calc(100% - 10px)；
+
+# 35
+•
+什么是 BFC
+参考回答：
+BFC 也就是常说的块格式化上下文，这是一个独立的渲染区域，规定了内部如何布局，
+并且这个区域的子元素不会影响到外面的元素，其中比较重要的布局规则有内部 box
+垂直放置，计算 BFC 的高度的时候，浮动元素也参与计算，触发 BFC 的规则有根元
+素，浮动元素，position 为 absolute 或 fixed 的元素，display 为 inline-block，
+table-cell，table-caption，flex，inline-flex，overflow 不为 visible 的元素
+
+# 36
+• z-index 的定位方法
+参考回答：
+z-index 属性设置元素的堆叠顺序，拥有更好堆叠顺序的元素会处于较低顺序元素之
+前，z-index 可以为负，且 z-index 只能在定位元素上奏效，该属性设置一个定位元素
+沿 z 轴的位置，如果为正数，离用户越近，为负数，离用户越远，它的属性值有
+auto，默认，堆叠顺序与父元素相等，number，inherit，从父元素继承 z-index 属性
+的值
+
+# 37
+•
+用的最多的 css 属性是啥？
+参考回答：
+用的目前来说最多的是 flex 属性，灵活但是兼容性方面不强。
+
+# 38
+•
+line-height 和 height 的区别
+参考回答：
+line-height 一般是指布局里面一段文字上下行之间的高度，是针对字体来设置的，
+height 一般是指容器的整体高度。
+
+# 39
+•
+设置一个元素的背景颜色，背景颜色会填充哪些区域？
+参考回答：
+background-color 设置的背景颜色会填充元素的 content、padding、border 区域。
+
+# 40
+•
+知道属性选择器和伪类选择器的优先级吗
+参考回答：
+属性选择器和伪类选择器优先级相同
+
+
