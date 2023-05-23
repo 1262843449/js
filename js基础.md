@@ -471,6 +471,7 @@ CSS 盒模型本质上是一个盒子，封装周围的 HTML 元素，它包括�
 3. display：none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把
 该元素删除掉。
 
+
 # 48
 •
 display:none 和 visibilty:hidden 的区别
