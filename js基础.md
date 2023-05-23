@@ -481,9 +481,6 @@ display:none 和 visibilty:hidden 的区别
 2. display：none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把
 该元素删除掉。
 
-
-
-
 # 49
 • css 的常用选择器
 参考回答：
