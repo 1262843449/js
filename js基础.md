@@ -390,4 +390,107 @@ background-color 设置的背景颜色会填充元素的 content、padding、bor
 参考回答：
 属性选择器和伪类选择器优先级相同
 
+# 41
+•
+inline-block、inline 和 block 的区别；为什么 img 是 inline 还可以
+设置宽高
+参考回答：
+Block 是块级元素，其前后都会有换行符，能设置宽度，高度，margin/padding 水平
+垂直方向都有效。
+Inline：设置 width 和 height 无效，margin 在竖直方向上无效，padding 在水平方向
+垂直方向都有效，前后无换行符
+Inline-block：能设置宽度高度，margin/padding 水平垂直方向 都有效，前后无换行
+符
+
+# 42
+•
+overflow 的原理
+参考回答：
+要讲清楚这个解决方案的原理，首先需要了解块格式化上下文，A block formatting 
+context is a part of a visual CSS rendering of a Web page. It is the region 
+in which the layout of block boxes occurs and in which floats interact with 
+each other.翻译过来就是块格式化上下文是 CSS 可视化渲染的一部分，它是一块区
+域，规定了内部块盒 的渲染方式，以及浮动相互之间的影响关系
+当元素设置了 overflow 样式且值部位 visible 时，该元素就构建了一个 BFC，BFC 在
+计算高度时，内部浮动元素的高度也要计算在内，也就是说技术 BFC 区域内只有一个
+浮动元素，BFC 的高度也不会发生塌缩，所以达到了清除浮动的目的。
+
+# 43
+•
+清除浮动的方法
+参考回答：
+给要清除浮动的元素添加样式 clear，\
+父元素结束标签钱插入清除浮动的块级元素，给该元素添加样式 clear
+添加伪元素，在父级元素的最后，添加一个伪元素，通过清除伪元素的浮动，注意该
+伪元素的 display 为 block，
+父元素添加样式 overflow 清除浮动，overflow 设置除 visible 以外的任何位置
+
+# 44
+ •
+box
+-
+sizing 的语法和基本用处
+参考回答：
+box-sizing 规定两个并排的带边框的框，语法为 box-sizing：content-box/border-
+box/inherit
+content-box：宽度和高度分别应用到元素的内容框，在宽度和高度之外绘制元素的内
+边距和边框
+border-box：为元素设定的宽度和高度决定了元素的边框盒，
+inherit：继承父元素的 box-sizing
+
+# 45
+ •
+使元素消失的方法有哪些？
+参考回答：
+1. opacity：0，该元素隐藏起来了，但不会改变页面布局，并且，如果该元素已经绑
+定一些事件，如 click 事件，那么点击该区域，也能触发点击事件的
+2. visibility：hidden，该元素隐藏起来了，但不会改变页面布局，但是不会触发该
+元素已经绑定的事件
+3. display：none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把
+该元素删除掉。
+
+# 46
+•
+说说盒子模型
+参考回答：
+CSS 盒模型本质上是一个盒子，封装周围的 HTML 元素，它包括：边距，边框，填充，
+和实际内容。
+标准盒模型：一个块的总宽度=width+margin(左右)+padding(左右)+border(左右)
+怪异盒模型：一个块的总宽度=width+margin（左右）（既 width 已经包含了 padding
+和 border 值）
+如何设置：box-sizing:border-box
+
+# 47
+•
+怎么隐藏一个元素
+参考回答：
+1. opacity：0，该元素隐藏起来了，但不会改变页面布局，并且，如果该元素已经绑
+定一些事件，如 click 事件，那么点击该区域，也能触发点击事件的
+2. visibility：hidden，该元素隐藏起来了，但不会改变页面布局，但是不会触发该
+元素已经绑定的事件
+3. display：none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把
+该元素删除掉。
+
+
+# 48
+•
+display:none 和 visibilty:hidden 的区别
+参考回答：
+1. visibility：hidden，该元素隐藏起来了，但不会改变页面布局，但是不会触发该
+元素已经绑定的事件
+2. display：none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把
+该元素删除掉。
+
+# 49
+• css 的常用选择器
+参考回答：
+id 选择器，类选择器，伪类选择器等 
+
+
+# 50
+• css 预处理器有什么
+参考回答：
+less，sass 等
+
+
 
